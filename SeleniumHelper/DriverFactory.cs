@@ -3,13 +3,11 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
-using OpenQA.Selenium.Support.Events;
-using OpenQA.Selenium.Support.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace Burkhart.Selenium
+namespace SeleniumHelper
 {
     public class DriverFactory
     {
@@ -47,18 +45,29 @@ namespace Burkhart.Selenium
         /// </summary>
         public TimeSpan GlobalWaitTime { get; private set; }
 
-
         /// <summary>
         /// Manage collection of WebDrivers
         /// </summary>
         /// <param name="baseUrl"><see cref="BaseUrl"/></param>
-        /// <param name="isRemote"><see cref="IsRemote"/></param>
-        /// <param name="hubUri"><see cref="RemoteHubUri"/></param>
-        public DriverFactory(string baseUrl, bool isRemote = false, string hubUri = "http://localhost:4444/")
+        public DriverFactory(string baseUrl)
         {
             WebDrivers = new List<IWebDriver>();
             GlobalWaitTime = TimeSpan.FromSeconds(10);
-            IsRemote = isRemote;
+            IsRemote = false;
+            //RemoteHubUri = new Uri(string.Empty);
+            BaseUrl = baseUrl;
+        }
+
+        /// <summary>
+        /// Manage collection of WebDrivers when using Selenium Grid
+        /// </summary>
+        /// <param name="baseUrl"><see cref="BaseUrl"/></param>
+        /// <param name="hubUri">Selenium Grid hub url<see cref="RemoteHubUri"/></param>
+        public DriverFactory(string baseUrl, string hubUri = "http://localhost:4444/")
+        {
+            WebDrivers = new List<IWebDriver>();
+            GlobalWaitTime = TimeSpan.FromSeconds(10);
+            IsRemote = true;
             RemoteHubUri = new Uri(hubUri);
             BaseUrl = baseUrl;
         }
