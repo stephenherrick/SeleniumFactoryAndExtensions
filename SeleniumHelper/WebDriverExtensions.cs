@@ -70,7 +70,7 @@ namespace OpenQA.Selenium
             wait.Until((d) =>
             {
                 element = d.FindElement(locator);
-                if (element.Displayed && element.Enabled)
+                if (element.Displayed || element.Enabled)
                 {
                     return element;
                 }
