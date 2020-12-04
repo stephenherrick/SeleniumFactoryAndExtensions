@@ -25,11 +25,19 @@ namespace OpenQA.Selenium
             element.SendKeys(input);
         }
 
-        public static void Tap(this IWebElement element, IWebDriver driver)
-        {
-            var builder = new Actions(driver);
-            builder.Click(element).Click().Build().Perform();
-        }
+        //To do.
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="element"></param>
+        ///// <param name="driver"></param>
+        //public static void Tap(this IWebElement element, IWebDriver driver)
+        //{
+        //    var touch = new TouchActions(driver);
+        //    touch    
+        //        .SingleTap(element)
+        //        .Perform();
+        //}
 
     }
 }
