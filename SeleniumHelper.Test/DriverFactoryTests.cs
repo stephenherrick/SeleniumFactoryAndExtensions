@@ -13,7 +13,7 @@ namespace SeleniumHelper.Tests
         [Test, Order(1)]
         public void DriverFactoryTest()
         {
-            Factory.AddDriver("chrome");
+            Factory.AddDriver("chromeheadless");
             Assert.IsNotNull(Factory.WebDrivers[0]);
         }
 
@@ -22,7 +22,7 @@ namespace SeleniumHelper.Tests
         {
             var driverCount = Factory.WebDrivers.Count;
 
-            Factory.AddDriver("chrome");
+            Factory.AddDriver("chromeheadless");
             Assert.AreEqual(driverCount+1, Factory.WebDrivers.Count);
             
         }

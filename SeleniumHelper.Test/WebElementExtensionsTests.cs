@@ -14,7 +14,7 @@ namespace OpenQA.Selenium.Tests
         [Test]
         public void SendKeysTest()
         {
-            var driver = Factory.AddDriver("chrome");
+            var driver = Factory.AddDriver("chromeheadless");
 
             var element = driver.FindElement(VisibleElement);
             element.SendKeys("delete me");

@@ -16,7 +16,7 @@ namespace OpenQA.Selenium.Tests
         [SetUp]
         public void setup()
         {
-            driver = Factory.AddDriver("chrome");
+            driver = Factory.AddDriver("chromeheadless");
         }
 
         [Test()]
@@ -85,12 +85,12 @@ namespace OpenQA.Selenium.Tests
             Assert.IsTrue(watch.ElapsedMilliseconds >= 1000);
         }
 
-        [Test()]
-        public void NavigateToTest()
-        {
-            driver.NavigateTo("/app");
+        // [Test()]
+        // public void NavigateToTest()
+        // {
+        //     driver.NavigateTo("/app");
 
-            Assert.IsTrue(driver.Url == $"{Factory.BaseUrl}/app");
-        }
+        //     Assert.IsTrue(driver.Url == $"{Factory.BaseUrl}/app");
+        // }
     }
 }
