@@ -82,8 +82,6 @@ namespace SeleniumHelper
         {
             GlobalWaitTime = TimeSpan.FromSeconds(waitTIme);
             var driver = SetBrowser(browserName);
-
-            driver.Manage().Timeouts().ImplicitWait = GlobalWaitTime;
             try
             {
                 driver.Manage().Window.Maximize();
