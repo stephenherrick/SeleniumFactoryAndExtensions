@@ -162,7 +162,8 @@ namespace SeleniumHelper
 
                     case "chromeheadless":
                         var choptions = new ChromeOptions();
-                        choptions.AddArgument("--headless --window-size=1200x800");
+                        choptions.AddArgument("headless");
+                        choptions.AddArgument("window-size=1200x800");
                         return new ChromeDriver(BaseApplicationPath, choptions, GlobalWaitTime);
 
                     case "edge":

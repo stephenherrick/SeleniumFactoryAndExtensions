@@ -13,8 +13,9 @@ namespace OpenQA.Selenium.Tests
     public class WebDriverExtensionsTests : TestBase
     {
         private IWebDriver driver;
+
         [SetUp]
-        public void setup()
+        public void Setup()
         {
             driver = Factory.AddDriver("chromeheadless");
         }

@@ -20,7 +20,7 @@ namespace SeleniumHelper.Test
         [OneTimeSetUp]
         public void InitialSetUp()
         {
-            BaseUrl = $"{AppDomain.CurrentDomain.BaseDirectory}/TestPage.html";
+            BaseUrl = $"file://{AppDomain.CurrentDomain.BaseDirectory}/TestPage.html";
             Factory = new DriverFactory(BaseUrl);
         }
 
@@ -30,9 +30,9 @@ namespace SeleniumHelper.Test
             foreach(var driver in Factory.WebDrivers)
             {
                 driver.Close();
-                driver.Quit();
             }
             Factory.ForceCloseDrivers();
         }
+
     }
 }

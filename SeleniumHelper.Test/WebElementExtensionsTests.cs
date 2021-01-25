@@ -11,10 +11,12 @@ namespace OpenQA.Selenium.Tests
     [TestFixture()]
     public class WebElementExtensionsTests : TestBase
     {
+        private IWebDriver driver;
+
         [Test]
         public void SendKeysTest()
         {
-            var driver = Factory.AddDriver("chromeheadless");
+            driver = Factory.AddDriver("chromeheadless");
 
             var element = driver.FindElement(VisibleElement);
             element.SendKeys("delete me");
