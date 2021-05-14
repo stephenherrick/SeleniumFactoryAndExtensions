@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
@@ -14,7 +14,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1"/>
     <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.27.0"/>
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0"/>
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="87.0.4280.8800"/>
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="90.0.4430.2400"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SeleniumHelper\SeleniumHelper.csproj"/>
